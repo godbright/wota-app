@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>79538479370-8rbo8m5sdiajmd33uj4ju1470811627a.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.79538479370-8rbo8m5sdiajmd33uj4ju1470811627a</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCnzrWsZL3BeIP_2wKMNGuYKT-7C8VG4DY</string>
+	<key>GCM_SENDER_ID</key>
+	<string>79538479370</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.wotas</string>
+	<key>PROJECT_ID</key>
+	<string>wota-d95d5</string>
+	<key>STORAGE_BUCKET</key>
+	<string>wota-d95d5.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:79538479370:ios:d8771cdd9cd5f113d49af3</string>
+	<key>DATABASE_URL</key>
+	<string>https://wota-d95d5-default-rtdb.firebaseio.com</string>
+</dict>
+</plist>

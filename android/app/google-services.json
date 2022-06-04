@@ -1,0 +1,83 @@
+{
+  "project_info": {
+    "project_number": "79538479370",
+    "firebase_url": "https://wota-d95d5-default-rtdb.firebaseio.com",
+    "project_id": "wota-d95d5",
+    "storage_bucket": "wota-d95d5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:79538479370:android:6c49b572c6b70d6cd49af3",
+        "android_client_info": {
+          "package_name": "com.example.wota"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "79538479370-jlobbtm7drt8jhvq3ap8doiqe90mu8q4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBtfJqAHp6_DKgQX6eNU8J-lbhwGqAvZj0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "79538479370-jlobbtm7drt8jhvq3ap8doiqe90mu8q4.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "79538479370-8rbo8m5sdiajmd33uj4ju1470811627a.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.wotas"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:79538479370:android:03ce5235c4b3159ad49af3",
+        "android_client_info": {
+          "package_name": "com.example.wotas"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "79538479370-jlobbtm7drt8jhvq3ap8doiqe90mu8q4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBtfJqAHp6_DKgQX6eNU8J-lbhwGqAvZj0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "79538479370-jlobbtm7drt8jhvq3ap8doiqe90mu8q4.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "79538479370-8rbo8m5sdiajmd33uj4ju1470811627a.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.wotas"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
