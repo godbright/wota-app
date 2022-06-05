@@ -37,7 +37,7 @@ class _AuthPageState extends State<AuthPage> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        body: _isLoggedIn ? Home() : const SignIn(),
+        body: const SignIn(),
       ),
     );
   }

@@ -2,25 +2,27 @@ import 'dart:convert';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:wota/views/pages/home_page.dart';
-import 'package:wota/views/signup_login/signin.dart';
 
+import '../../controllers/auth/loginController.dart';
 import '../../services/api.dart';
 import '../../widgets/text_widget.dart';
 
-class SignUp extends StatefulWidget {
-  const SignUp({Key? key}) : super(key: key);
+class Tankreg extends StatefulWidget {
+  const Tankreg({Key? key}) : super(key: key);
 
   @override
-  _SignUpState createState() => _SignUpState();
+  _TankregState createState() => _TankregState();
 }
 
-class _SignUpState extends State<SignUp> {
-  TextEditingController passController = TextEditingController();
-  TextEditingController repassController = TextEditingController();
-  TextEditingController emailController = TextEditingController();
-  TextEditingController nameController = TextEditingController();
+class _TankregState extends State<Tankreg> {
+  TextEditingController companyController = TextEditingController();
+  TextEditingController heightController = TextEditingController();
+  TextEditingController radiusController = TextEditingController();
+  TextEditingController capacityController = TextEditingController();
+  LoginController userController = Get.find();
 
   @override
   void initState() {
@@ -44,26 +46,23 @@ class _SignUpState extends State<SignUp> {
 
   _register() async {
     var data = {
-      'name': nameController.text,
-      'email': emailController.text,
-      'password': passController.text,
+      'company': companyController.text,
+      'height': heightController.text,
+      'radius': radiusController.text,
+      'capacity': capacityController.text,
+      "user_id": userController.user["id"],
     };
-    debugPrint(nameController.text);
-    debugPrint(emailController.text);
-    debugPrint(passController.text);
-    debugPrint(repassController.text);
+    debugPrint(companyController.text);
+    debugPrint(heightController.text);
+    debugPrint(radiusController.text);
+    debugPrint(capacityController.text);
 
-    var res = await CallApi().postData(data, 'auth/register');
+    var res = await CallApi().postData(data, 'regTank/');
     var body = json.decode(res.body);
     debugPrint("dataaa ${body}");
     if (body['success']) {
-      SharedPreferences localStorage = await SharedPreferences.getInstance();
-      localStorage.setString('token', body['token']);
-      localStorage.setString('user', json.encode(body['user']));
       Navigator.push(
           context, new MaterialPageRoute(builder: (context) => Home()));
-    } else {
-      _showMsg(body.email);
     }
   }
 
@@ -109,8 +108,17 @@ class _SignUpState extends State<SignUp> {
             ),
             SizedBox(height: height * 0.1),
             TextInput(
-              textString: "Name",
-              textController: nameController,
+              textString: "Company",
+              textController: companyController,
+              hint: "company",
+              obscureText: false,
+            ),
+            SizedBox(
+              height: height * .05,
+            ),
+            TextInput(
+              textString: "Height",
+              textController: heightController,
               hint: "Email",
               obscureText: false,
             ),
@@ -118,28 +126,25 @@ class _SignUpState extends State<SignUp> {
               height: height * .05,
             ),
             TextInput(
-              textString: "Email",
-              textController: emailController,
-              hint: "Email",
-              obscureText: false,
-            ),
-            SizedBox(
-              height: height * .05,
-            ),
-            TextInput(
-              textString: "Password",
-              textController: passController,
+              textString: "Radius",
+              textController: radiusController,
               hint: "Password",
-              obscureText: true,
+              obscureText: false,
             ),
             SizedBox(
               height: height * .05,
+            ),
+            TextInput(
+              textString: "Capacity",
+              textController: capacityController,
+              hint: "capacity",
+              obscureText: false,
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 TextWidget(
-                  text: "Sign Up",
+                  text: "Register Tank",
                   fontSize: 22,
                   isUnderLine: false,
                   key: null,
@@ -160,23 +165,6 @@ class _SignUpState extends State<SignUp> {
                     ))
               ],
             ),
-            SizedBox(height: height * 0.1),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                GestureDetector(
-                  onTap: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => SignIn()));
-                  },
-                  child: TextWidget(
-                    text: "Sign in",
-                    fontSize: 16,
-                    isUnderLine: true,
-                  ),
-                )
-              ],
-            )
           ],
         ),
       ),

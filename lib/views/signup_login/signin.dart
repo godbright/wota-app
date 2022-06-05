@@ -8,6 +8,7 @@ import 'package:wota/views/signup_login/signup.dart';
 
 import '../../services/api.dart';
 import '../../widgets/text_widget.dart';
+import '../pages/home.dart';
 
 class SignIn extends StatefulWidget {
   const SignIn({Key? key}) : super(key: key);

@@ -39,11 +39,11 @@ class _IndiTankState extends State<IndiTank> {
     return Scaffold(
       body: Obx(() {
         return Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
               child: Container(
                 height: height * 0.46,
                 width: width,
@@ -56,7 +56,7 @@ class _IndiTankState extends State<IndiTank> {
                       219)), // Defaults to the current Theme's accentColor.
                   backgroundColor: Colors
                       .white, // Defaults to the current Theme's backgroundColor.
-                  borderColor: Color.fromARGB(255, 117, 115, 115),
+                  borderColor: Color.fromARGB(255, 255, 255, 255),
                   borderWidth: 2.0,
 
                   direction: Axis
@@ -64,11 +64,163 @@ class _IndiTankState extends State<IndiTank> {
                 ),
               ),
             ),
+            SizedBox(
+              height: height * 0.02,
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 8.0),
+              child: Container(
+                margin: const EdgeInsets.only(bottom: 32),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                    colors: [
+                      Color.fromARGB(255, 80, 171, 245),
+                      Color.fromARGB(255, 8, 77, 134)
+                    ],
+                    begin: Alignment.centerLeft,
+                    end: Alignment.centerRight,
+                  ),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Color.fromARGB(255, 30, 147, 243).withOpacity(0.4),
+                      blurRadius: 8,
+                      spreadRadius: 2,
+                      offset: Offset(4, 4),
+                    ),
+                  ],
+                  borderRadius: BorderRadius.all(Radius.circular(24)),
+                ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    SizedBox(
+                      height: height * 0.006,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: <Widget>[
+                        // Switch(
+                        //   onChanged: (bool value) {},
+                        //   value: true,
+                        //   activeColor: Colors.white,
+                        // ),
+                      ],
+                    ),
+                    SizedBox(
+                      height: height * 0.02,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: <Widget>[
+                        // Column(
+                        //   children: [
+                        //     Text(
+                        //       "Capacity",
+                        //       style: TextStyle(
+                        //         color: Colors.white,
+                        //         fontFamily: 'avenir',
+                        //         fontSize: 15,
+                        //       ),
+                        //     ),
+                        //     Text(
+                        //       "${dataController.data.toString()}",
+                        //       style: TextStyle(
+                        //           color: Colors.white,
+                        //           fontFamily: 'avenir',
+                        //           fontSize: 24,
+                        //           fontWeight: FontWeight.w700),
+                        //     ),
+                        //   ],
+                        // ),
+                        Column(
+                          children: [
+                            Text(
+                              "Buckets",
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontFamily: 'avenir',
+                                fontSize: 15,
+                              ),
+                            ),
+                            Text(
+                              "${dataController.buckets.round().toString()}",
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontFamily: 'avenir',
+                                  fontSize: 24,
+                                  fontWeight: FontWeight.w700),
+                            ),
+                          ],
+                        ),
+                        Column(
+                          children: [
+                            Text(
+                              "Water Used",
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontFamily: 'avenir',
+                                fontSize: 15,
+                              ),
+                            ),
+                            Text(
+                              "${dataController.re_volume.round().toString()}",
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontFamily: 'avenir',
+                                  fontSize: 24,
+                                  fontWeight: FontWeight.w700),
+                            ),
+                          ],
+                        ),
+                        Column(
+                          children: [
+                            Text(
+                              "Water remaining",
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontFamily: 'avenir',
+                                fontSize: 15,
+                              ),
+                            ),
+                            Text(
+                              "${dataController.use_volume.round().toString()}",
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontFamily: 'avenir',
+                                  fontSize: 24,
+                                  fontWeight: FontWeight.w700),
+                            ),
+                          ],
+                        )
+
+                        // IconButton(
+                        //     icon: Icon(Icons.delete),
+                        //     color: Colors.white,
+                        //     onPressed: () {
+                        //       deleteAlarm(alarm.id);
+                        //     }),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+            ),
             GestureDetector(
               onTap: () => Get.to(Charts()),
-              child: Container(child: Text("Check charts")),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  Container(child: Text("Tap to Check charts")),
+                  Icon(
+                    Icons.trending_up_rounded,
+                    color: Colors.blue,
+                    size: 24,
+                  ),
+                ],
+              ),
             ),
-            Text(dataController.data.toString())
           ],
         );
       }),

@@ -12,8 +12,8 @@ class MonthlyChartData extends StatefulWidget {
 
 class _MonthlyChartDataState extends State<MonthlyChartData> {
   List<Color> gradientColors = [
-    const Color(0xff23b6e6),
-    const Color(0xff02d39a),
+    Color.fromARGB(255, 80, 171, 245),
+    Color.fromARGB(255, 8, 77, 134)
   ];
 
   MonthlyChartController mcontroller = Get.find();
@@ -32,7 +32,7 @@ class _MonthlyChartDataState extends State<MonthlyChartData> {
                 borderRadius: BorderRadius.all(
                   Radius.circular(18),
                 ),
-                color: Color(0xff232d37)),
+                color: Color.fromARGB(255, 253, 253, 253)),
             child: Padding(
               padding: const EdgeInsets.only(
                   right: 18.0, left: 12.0, top: 24, bottom: 12),
@@ -50,18 +50,45 @@ class _MonthlyChartDataState extends State<MonthlyChartData> {
     const style = TextStyle(
       color: Color(0xff68737d),
       fontWeight: FontWeight.bold,
-      fontSize: 16,
+      fontSize: 8,
     );
     Widget text;
     switch (value.toInt()) {
+      case 0:
+        text = const Text('JAN', style: style);
+        break;
+      case 1:
+        text = const Text('FEB', style: style);
+        break;
       case 2:
         text = const Text('MAR', style: style);
+        break;
+      case 3:
+        text = const Text('APR', style: style);
+        break;
+      case 4:
+        text = const Text('MAY', style: style);
         break;
       case 5:
         text = const Text('JUN', style: style);
         break;
+      case 6:
+        text = const Text('JUL', style: style);
+        break;
+      case 7:
+        text = const Text('AUG', style: style);
+        break;
       case 8:
         text = const Text('SEP', style: style);
+        break;
+      case 9:
+        text = const Text('OCT', style: style);
+        break;
+      case 10:
+        text = const Text('NOV', style: style);
+        break;
+      case 11:
+        text = const Text('DEC', style: style);
         break;
       default:
         text = const Text('', style: style);
@@ -104,7 +131,7 @@ class _MonthlyChartDataState extends State<MonthlyChartData> {
       gridData: FlGridData(
         show: true,
         drawVerticalLine: true,
-        horizontalInterval: 1,
+        horizontalInterval: 20,
         verticalInterval: 1,
         getDrawingHorizontalLine: (value) {
           return FlLine(
@@ -140,7 +167,7 @@ class _MonthlyChartDataState extends State<MonthlyChartData> {
             showTitles: true,
             interval: 1,
             getTitlesWidget: leftTitleWidgets,
-            reservedSize: 42,
+            reservedSize: 0,
           ),
         ),
       ),
@@ -148,9 +175,9 @@ class _MonthlyChartDataState extends State<MonthlyChartData> {
           show: true,
           border: Border.all(color: const Color(0xff37434d), width: 1)),
       minX: 0,
-      maxX: 11,
+      maxX: 12,
       minY: 0,
-      maxY: 6,
+      // maxY: 6,
       lineBarsData: [
         LineChartBarData(
           spots: spots,
@@ -161,9 +188,9 @@ class _MonthlyChartDataState extends State<MonthlyChartData> {
             end: Alignment.centerRight,
           ),
           barWidth: 5,
-          isStrokeCapRound: true,
+          isStrokeCapRound: false,
           dotData: FlDotData(
-            show: false,
+            show: true,
           ),
           belowBarData: BarAreaData(
             show: true,

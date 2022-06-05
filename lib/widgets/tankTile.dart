@@ -30,19 +30,22 @@ class _TankTileState extends State<TankTile> {
         ));
       },
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 8.0),
+        padding: const EdgeInsets.symmetric(horizontal: 20.0),
         child: Container(
           margin: const EdgeInsets.only(bottom: 32),
           padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
           decoration: BoxDecoration(
             gradient: LinearGradient(
-              colors: [Color.fromARGB(255, 80, 171, 245), Colors.blue],
+              colors: [
+                Color.fromARGB(255, 80, 171, 245),
+                Color.fromARGB(255, 8, 77, 134)
+              ],
               begin: Alignment.centerLeft,
               end: Alignment.centerRight,
             ),
             boxShadow: [
               BoxShadow(
-                color: Color.fromARGB(255, 30, 147, 243).withOpacity(0.4),
+                color: Color.fromARGB(255, 50, 155, 247).withOpacity(0.4),
                 blurRadius: 8,
                 spreadRadius: 2,
                 offset: Offset(4, 4),
@@ -59,28 +62,13 @@ class _TankTileState extends State<TankTile> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
-                  Row(
-                    children: <Widget>[
-                      Text(
-                        widget.tank.company,
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontFamily: 'avenir',
-                            fontSize: 25),
-                      ),
-                      SizedBox(width: 8),
-                      Icon(
-                        Icons.door_back_door,
+                  Text(
+                    widget.tank.company,
+                    style: TextStyle(
                         color: Colors.white,
-                        size: 24,
-                      ),
-                    ],
+                        fontFamily: 'avenir',
+                        fontSize: 20),
                   ),
-                  // Switch(
-                  //   onChanged: (bool value) {},
-                  //   value: true,
-                  //   activeColor: Colors.white,
-                  // ),
                 ],
               ),
               SizedBox(

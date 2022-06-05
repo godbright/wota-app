@@ -15,13 +15,13 @@ class Charts extends StatelessWidget {
             bottom: const TabBar(
               tabs: <Widget>[
                 Tab(
-                  icon: Icon(Icons.cloud_outlined),
+                  child: Text("Daily"),
                 ),
                 Tab(
-                  icon: Icon(Icons.beach_access_sharp),
+                  child: Text("Weekly"),
                 ),
                 Tab(
-                  icon: Icon(Icons.brightness_5_sharp),
+                  child: Text("Monthly"),
                 ),
               ],
             ),
