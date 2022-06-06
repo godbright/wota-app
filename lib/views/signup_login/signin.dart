@@ -55,7 +55,6 @@ class _SignInState extends State<SignIn> {
       SharedPreferences localStorage = await SharedPreferences.getInstance();
       localStorage.setString('token', body['token']);
       localStorage.setString('user', json.encode(body['user']));
-
       //TODO After Login send the user to the Tank list screen with getx
 
       Navigator.push(

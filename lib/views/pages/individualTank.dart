@@ -49,11 +49,11 @@ class _IndiTankState extends State<IndiTank> {
                 width: width,
                 child: LiquidCircularProgressIndicator(
                   value: dataController.data.value, // Defaults to 0.5.
-                  valueColor: AlwaysStoppedAnimation(Color.fromARGB(
-                      255,
-                      108,
-                      175,
-                      219)), // Defaults to the current Theme's accentColor.
+                  valueColor: AlwaysStoppedAnimation(dataController.data.value <
+                          0.2
+                      ? Color.fromARGB(255, 134, 34, 34)
+                      : Color.fromARGB(255, 108, 175,
+                          219)), // Defaults to the current Theme's accentColor.
                   backgroundColor: Colors
                       .white, // Defaults to the current Theme's backgroundColor.
                   borderColor: Color.fromARGB(255, 255, 255, 255),
